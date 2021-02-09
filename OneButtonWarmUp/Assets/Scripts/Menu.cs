@@ -71,7 +71,7 @@ public class Menu : MonoBehaviour
 
     }
 
-    void YouWin()
+    public void NowYouWin()
     {
       Time.timeScale = 0;
       end = true;
@@ -80,7 +80,7 @@ public class Menu : MonoBehaviour
       YouWinTxt.SetActive(true);
     }
 
-    void YouLoose()
+    public void YouLoose()
     {
       Time.timeScale = 0;
       end = true;
@@ -89,19 +89,19 @@ public class Menu : MonoBehaviour
       YouLooseTxt.SetActive(false);
     }
 
-    void StartGame()
+    private void StartGame()
     {
       MenuBase.SetActive(false);
       Time.timeScale = 1;
       gameOn = true;
     }
 
-    void RestartGame()
+    private void RestartGame()
     {
       SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    void QuitGame()
+    private void QuitGame()
     {
       //Application.Quit;
     }

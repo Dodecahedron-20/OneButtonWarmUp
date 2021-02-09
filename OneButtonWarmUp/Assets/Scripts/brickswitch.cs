@@ -16,10 +16,17 @@ public class brickswitch : MonoBehaviour
     private bool under;
 
 
+    [SerializeField]
+    private float seconds;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
-      //  StartCoroutine(Switchflip());
+        StartCoroutine(Switchflip());
+
+
 
     }
 
@@ -27,32 +34,43 @@ public class brickswitch : MonoBehaviour
     void Update()
     {
 
+    }
 
+    IEnumerator Switchflip()
+    {
+      var delay = seconds;
 
+      yield return new WaitForSeconds(delay);
 
+      Switch();
 
-
+      StartCoroutine(Switchflip());
 
 
     }
 
+    private void Switch()
+    {
+      if (under == true)
+      {
+        SetUpright();
+      }
+      else
+      {
+        SetUnder();
+      }
+    }
 
-    //IEnumerator Switchflip()
-   // {
 
 
-
-    //}
-
-
-    void SetUpright()
+    private void SetUpright()
     {
         under = false;
         DuckUnder.SetActive(false);
         GoThrough.SetActive(true);
     }
 
-    void SetUnder()
+    private void SetUnder()
     {
         under = true;
         DuckUnder.SetActive(true);

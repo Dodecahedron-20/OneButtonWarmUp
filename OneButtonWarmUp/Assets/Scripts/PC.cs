@@ -1,13 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PC : MonoBehaviour
 {
 
-    //speed of movement
-    [SerializeField]
-    private float Speed;
+
 
     //KeyCodeButton
     [SerializeField]
@@ -28,25 +27,23 @@ public class PC : MonoBehaviour
     //health tests:
     [SerializeField]
     private int Health;
+    [SerializeField]
+    private string hp;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        //auto movement:
-        var horiz = 0;
 
-        horiz += 1;
-
-        var movement = new Vector3(horiz, 0, 0).normalized * Speed * Time.deltaTime;
-        transform.position += movement;
 
         //Action Button
 
@@ -64,19 +61,27 @@ public class PC : MonoBehaviour
     }
 
 
-    void MakeBrickTall()
+    private void MakeBrickTall()
     {
         TallbrickActive = true;
         PCBrick.SetActive(true);
         PCBrickFlat.SetActive(false);
     }
 
-    void MakeBrickFlat()
+    private void MakeBrickFlat()
     {
         TallbrickActive = false;
         PCBrick.SetActive(false);
         PCBrickFlat.SetActive(true);
     }
+
+    //health goes here:
+
+    public void LoseHealth()
+    {
+
+    }
+
 
 
 
