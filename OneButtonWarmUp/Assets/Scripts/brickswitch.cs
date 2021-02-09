@@ -20,12 +20,13 @@ public class brickswitch : MonoBehaviour
     void Start()
     {
       //  StartCoroutine(Switchflip());
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
 
 
 
@@ -38,7 +39,7 @@ public class brickswitch : MonoBehaviour
 
     //IEnumerator Switchflip()
    // {
-        
+
 
 
     //}
